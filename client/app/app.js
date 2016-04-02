@@ -16,10 +16,10 @@ angular.module('shortly', [
       controller: 'AuthController'
     })
     // Your code here
-    .when('/logout', {
-      templateUrl: 'app/auth/signin.html',
-      controller: 'AuthController'
-    })
+    // .when('/logout', {
+    //   templateUrl: 'app/auth/signin.html',
+    //   controller: 'AuthController'
+    // })
     .when('/links', {
       templateUrl: 'app/links/links.html',
       controller: 'LinksController'

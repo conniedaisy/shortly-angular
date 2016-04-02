@@ -12,11 +12,9 @@ module.exports = {
   allLinks: function (req, res, next) {
     findAllLinks({})
       .then(function (links) {
-        console.log('inside allLinks: ', links);
         res.json(links);
       })
       .fail(function (error) {
-        console.log('allLinks has error: ', error);
         next(error);
       });
   },

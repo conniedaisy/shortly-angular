@@ -8,17 +8,25 @@ angular.module('shortly.shorten', [])
   $scope.link = {};
   $scope.addLink = function() {
 
+
+
     if (Auth.isAuth()) {
-      Links.addOne($scope.link);
+
+      //validation
+      if ($scope.shortenForm.$valid) {
+        Links.addOne($scope.link)
+        .then(function() {
+          $location.path('/links');
+        });
+      }
     } else {
       $location.path('/signin');
     }
-  };
-
-  $scope.redirect = function() {
-    $location.path('/links');
 
   };
+
+  // $scope.redirect = function() {
+  // };
 
 
 });

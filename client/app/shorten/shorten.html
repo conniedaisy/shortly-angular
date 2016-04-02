@@ -1,29 +1,13 @@
 <div id='container' ng-controller='ShortenController'>
   <!-- Your code here -->
-<<<<<<< HEAD
-  <!-- <input ng-model="newLink">
-  <button ng-click="addLink(newLink)">add</button> -->
 
-  <form name="shortenForm" ng-submit='addLink()'>
-    <input type='text' ng-model='link.url'>
-    <button ng-click="redirect(); link.url=''">submit</button>
-    <!-- after submit, redirect to links page -->
+  <form name="shortenForm" ng-submit='addLink()' novalidate>
+    <input type='url' name='input' ng-model='link.url'>
+    <p ng-show="shortenForm.input.$invalid" class="help-block">Enter a valid url.</p>
+    <button>submit</button>
     
   </form>
 
-=======
-<!--   <input ng-model="newLink">
-  <button ng-click="addLink(newLink)">add</button>
- -->
-  <form name="shortenForm" ng-submit='addLink()'>
-    <input type='text' ng-model='link.url'>
-    <button>Submit</button>
-  </form>
-
-  <!-- redirect to links page -->
-  <!-- on submit, clear form -->
-
->>>>>>> 64bb1b3ac33969fbd7a3f23ad391013c0f7145bb
 </div>
 
 
