@@ -4,12 +4,12 @@
 angular.module('shortly.auth', [])
 
 .controller('AuthController', function ($scope, $window, $location, Auth) {
-  $scope.user = {};
+  $scope.user = {}; // {username: 'username', password: 'password'}
 
   $scope.signin = function () {
-    Auth.signin($scope.user)
+    Auth.signin($scope.user) // returns user token
       .then(function (token) {
-        $window.localStorage.setItem('com.shortly', token);
+        $window.localStorage.setItem('com.shortly', token); // storing user token locally
         $location.path('/links');
       })
       .catch(function (error) {
@@ -26,5 +26,9 @@ angular.module('shortly.auth', [])
       .catch(function (error) {
         console.error(error);
       });
+  };
+
+  $scope.signout = function() {
+    Auth.signout();
   };
 });

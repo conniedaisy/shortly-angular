@@ -12,15 +12,17 @@ module.exports = {
   allLinks: function (req, res, next) {
     findAllLinks({})
       .then(function (links) {
+        console.log('inside allLinks: ', links);
         res.json(links);
       })
       .fail(function (error) {
+        console.log('allLinks has error: ', error);
         next(error);
       });
   },
 
   newLink: function (req, res, next) {
-    var url = req.body.url;
+    var url = req.body.url; //expecting object
     if (!util.isValidUrl(url)) {
       return next(new Error('Not a valid url'));
     }
