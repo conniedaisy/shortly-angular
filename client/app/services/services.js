@@ -13,6 +13,7 @@ angular.module('shortly.services', [])
     });
   };
   var addOne = function(link) {
+    console.log('addOne is called!');
     return $http({
       method: 'POST',
       url: '/api/links',

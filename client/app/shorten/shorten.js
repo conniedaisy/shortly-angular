@@ -17,5 +17,8 @@ angular.module('shortly.shorten', [])
 
   $scope.redirect = function() {
     $location.path('/links');
+
   };
+
+
 });
