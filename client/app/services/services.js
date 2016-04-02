@@ -3,14 +3,12 @@ angular.module('shortly.services', [])
 .factory('Links', function ($http) {
   // Your code here
   var getAll = function() {
-    console.log('inside getAll');
     return $http({
       method: 'GET',
       url: '/api/links',
       // data: link
     })
     .then(function (resp) {
-      console.log('response data here: ', resp.data);
       return resp.data;
     });
   };
